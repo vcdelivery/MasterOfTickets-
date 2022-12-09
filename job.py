@@ -97,8 +97,6 @@ class WarehouseWorker:
 ######################END WORKER CLASS#############################
 
 
-
-
 def EXECUTE_JOB(fetch:bool, sleep_time:int, validation_attempts:int=3):
     from time import sleep 
     push_to_pg = True if fetch else False 
@@ -115,17 +113,25 @@ def EXECUTE_JOB(fetch:bool, sleep_time:int, validation_attempts:int=3):
             print(e)
             continue
 
-            
 
 
+
+from classes import DataParser
 from time import sleep 
+from os.path import join 
 FETCH = True
 SLEEP_TIME = 5
 VALIDATION_ATTEMPTS = 1 
+DATA_DIRNAME = "warehoused_data"
+ATTRACTION_DATA_FILENAME = "attraction_data_warehoused_event_data.json"
+EVENT_DATA_FILENAME = "event_data_warehoused_event_data.json"
 if __name__ == "__main__":
-    EXECUTE_JOB(FETCH, SLEEP_TIME, VALIDATION_ATTEMPTS)
+    dataparser = DataParser(fetch_data=True)
+    attraction_df = dataparser.parse_attraction_data(ATTRACTION_DATA_FILENAME, 200)
+    event_df = dataparser.parse_event_data(EVENT_DATA_FILENAME, 200)
+    event_df.to_csv(join(DATA_DIRNAME, "events_df.csv"))
+    attraction_df.to_csv(join(DATA_DIRNAME, "attractions_df.csv"))
     print(f"Job done with {VALIDATION_ATTEMPTS} validation attempts! Sleeping until tomorrow...")
-    #sleep(86400)
     
     
     

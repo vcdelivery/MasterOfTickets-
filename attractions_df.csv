@@ -1,0 +1,201 @@
+,attraction_id,attraction_name,total_upcoming_attraction_events,upcoming_attraction_ticketmaster_events,attraction_genre
+0,K8vZ91718nV,The Spinners,13,11,R&B
+1,K8vZ91718zf,WWE,66,53,Wrestling
+2,K8vZ9172Ln7,The Weeknd,29,9,Hip-Hop/Rap
+3,K8vZ9171FkV,Red Hot Chili Peppers,31,21,Rock
+4,K8vZ917544V,Maroon 5,40,19,Rock
+5,K8vZ91754JV,Wicked (Touring),344,64,Theatre
+6,K8vZ91716MV,Goo Goo Dolls,29,26,Rock
+7,K8vZ91710df,Keith Urban,24,24,Country
+8,K8vZ9174qlV,Morgan Wallen,64,54,Country
+9,K8vZ9171CG7,Foreigner,59,53,Rock
+10,K8vZ9171Cx0,KISS,7,NA,Rock
+11,K8vZ9175iO0,Miranda Lambert,26,26,Country
+12,K8vZ9172Sl7,The Book of Mormon (Touring),319,54,Theatre
+13,K8vZ9175MQf,Chris Brown,21,10,R&B
+14,K8vZ9175DY0,Paramore,45,40,Rock
+15,K8vZ917Gp10,Pitbull,7,7,Pop
+16,K8vZ91794MV,Bob Weir And Wolf Bros,25,21,Rock
+17,K8vZ9172bCf,alt-J,11,10,Undefined
+18,K8vZ917GlEf,Nate Bargatze,43,32,Comedy
+19,K8vZ917bZLV,Dude Perfect,25,20,Family
+20,K8vZ917Q3M0,Yeat,35,27,Hip-Hop/Rap
+21,K8vZ917CCl7,Banda MS,13,10,World
+22,K8vZ91713C7,Bush,18,16,Rock
+23,K8vZ9172XPV,Seven Lions,49,32,Dance/Electronic
+24,K8vZ917f3T7,Disney's Aladdin (Touring),184,83,Theatre
+25,K8vZ917Q-Z0,Rockzilla Tour,16,16,Alternative
+26,K8vZ917bYhV,Six (Touring),214,214,Theatre
+27,K8vZ917GPQ7,Chris Young,3,3,Country
+28,K8vZ9174hA7,A Boogie Wit Da Hoodie,25,18,Hip-Hop/Rap
+29,K8vZ917187f,The Beach Boys,17,11,Rock
+30,K8vZ917p8j7,Masego,20,15,Hip-Hop/Rap
+31,K8vZ91712If,REO Speedwagon,25,16,Rock
+32,K8vZ9179No7,Frozen (Touring),102,102,Theatre
+33,K8vZ917KbD7,EPIK HIGH,19,18,Hip-Hop/Rap
+34,K8vZ9179G57,City Morgue,19,17,Hip-Hop/Rap
+35,K8vZ9179LdV,HARDY,51,38,Country
+36,K8vZ91718C0,Buddy Guy,47,42,Blues
+37,K8vZ9171CVV,Jason Mraz,2,2,Rock
+38,K8vZ9171a30,Travis Tritt,16,13,Country
+39,K8vZ9175M60,Ricky Gervais,4,4,Comedy
+40,K8vZ9171uV7,Bret Michaels,15,14,Rock
+41,K8vZ9171t87,Brian Regan,56,40,Comedy
+42,K8vZ917_RLf,The Taylor Party: Taylor Swift Night,33,28,Dance/Electronic
+43,K8vZ917fQxV,Leanne Morgan,27,19,Comedy
+44,K8vZ9171jXf,Tenacious D,12,5,Rock
+45,K8vZ9171Kbf,Social Distortion,20,19,Rock
+46,K8vZ9174RDf,Mt. Joy,11,7,Folk
+47,K8vZ9171bjf,Andre Rieu,24,20,Classical
+48,K8vZ9173pm0,Annie (Touring),62,62,Theatre
+49,K8vZ9171l00,PBR: Professional Bull Riders,102,80,Rodeo
+50,K8vZ91715If,Boyz II Men,10,6,R&B
+51,K8vZ9171bnf,Gary Allan,10,5,Country
+52,K8vZ917pUVV,Dear Evan Hansen (Touring),182,55,Theatre
+53,K8vZ917G9xV,Steel Panther,40,36,Rock
+54,K8vZ9179vjf,Key Glock,39,30,Hip-Hop/Rap
+55,K8vZ91718MV,Harlem Globetrotters,188,153,Family
+56,K8vZ91713h0,Cats (Touring),96,58,Theatre
+57,K8vZ917Q8I7,Beetlejuice (Touring),97,97,Theatre
+58,K8vZ9172CsV,Neil deGrasse Tyson,14,9,Family
+59,K8vZ91724cV,The Temptations & the Four Tops,12,12,R&B
+60,K8vZ9171DHf,Umphrey's McGee,41,25,Rock
+61,K8vZ917C_4f,Black Jacket Symphony,35,24,Rock
+62,K8vZ91718q0,Tesla,12,12,Rock
+63,K8vZ917GU4f,Lee Brice,5,4,Country
+64,K8vZ91716g7,The Flaming Lips,12,12,Rock
+65,K8vZ917Caq7,Happy Together Tour,12,7,Rock
+66,K8vZ91744Jf,Hairspray (Touring),86,86,Theatre
+67,K8vZ917bEp7,Molchat Doma,19,17,Rock
+68,K8vZ9175gZf,Il Divo,35,29,Rock
+69,K8vZ917beP0,Emotional Oranges,13,13,R&B
+70,K8vZ9175Di0,Goose,25,21,Rock
+71,K8vZ91710D0,Papa Roach,20,20,Rock
+72,K8vZ917bgM0,Hadestown (Touring),61,61,Theatre
+73,K8vZ9172ODf,Bastille,10,10,Rock
+74,K8vZ9171owV,Fiddler on the Roof (Touring),124,51,Theatre
+75,K8vZ917bRU7,Hannah Berner,4,4,Comedy
+76,K8vZ917Q8E0,Jagged Little Pill (Touring),80,80,Theatre
+77,K8vZ9173Z60,Judah & the Lion,16,9,Folk
+78,K8vZ9171KIV,Newsboys,7,1,Religious
+79,K8vZ9172COf,Kip Moore,10,8,Country
+80,K8vZ917CEs7,Falling In Reverse,20,20,Metal
+81,K8vZ9175-s7,The Walkmen,5,4,Rock
+82,K8vZ9171Pv7,Thunder From Down Under,316,315,Miscellaneous Theatre
+83,K8vZfZ7vlA6,Gimme Gimme Disco,47,27,Dance/Electronic
+84,K8vZ9175MzV,Killer Queen,23,20,Undefined
+85,K8vZ917Geq7,Mamma Mia! (Touring),22,6,Theatre
+86,K8vZ917GSuV,Pop Evil,17,14,Rock
+87,K8vZ9175zP7,Almost Queen,11,8,Undefined
+88,K8vZ9171h90,Dru Hill,7,6,R&B
+89,K8vZ9171NwV,Wanda Sykes,5,4,Comedy
+90,K8vZ9171UUf,The Strokes,7,6,Rock
+91,K8vZ9175QC7,Nick Swardson,11,6,Comedy
+92,K8vZ9171jSf,Mariachi Sol De Mexico,7,4,World
+93,K8vZ9171CH7,Grand Funk Railroad,6,4,Rock
+94,K8vZ917uZ_7,The Summer Set,11,8,Rock
+95,K8vZ917GI_f,Led Zeppelin 2,9,7,Undefined
+96,K8vZ9175NUV,Silverstein,36,14,Rock
+97,K8vZ9175OQV,Tracy Morgan,19,1,Comedy
+98,K8vZ9178xmf,Fit for a King,23,21,Metal
+99,K8vZ9175bW0,Bacilos,19,18,World
+100,K8vZ9171cef,Gaither Vocal Band,3,2,Religious
+101,K8vZ9175WJV,Silversun Pickups,23,13,Rock
+102,K8vZ9175pX0,Matt Nathanson,14,9,Rock
+103,K8vZ917QwPV,Bikini Bottom Rave,5,5,Dance/Electronic
+104,K8vZ91750Q7,Lalah Hathaway,10,5,R&B
+105,K8vZ917KUtV,Jordan Davis,18,16,Country
+106,K8vZ917_flV,Morgan Wade,48,17,Country
+107,K8vZ917GH2f,Vic DiBitetto,7,6,Comedy
+108,K8vZ917GFEf,Trevor Hall,8,7,Rock
+109,K8vZ91712O0,Night Ranger,17,15,Rock
+110,K8vZ917btUV,Larry Fleet,14,12,Country
+111,K8vZ917GI37,The Molly Ringwalds,6,4,Undefined
+112,K8vZ9171K7V,Nitty Gritty Dirt Band,14,11,Country
+113,K8vZ917Cgd7,Neal Brennan,20,16,Comedy
+114,K8vZ9171qQ0,Robbie Williams,25,10,Rock
+115,K8vZ9171me0,Lettuce,15,7,Rock
+116,K8vZ91718lf,Herman's Hermits,9,6,Rock
+117,K8vZ917Q0Zf,Bailey Zimmerman,54,53,Country
+118,K8vZ9171IV0,Lang Lang,3,1,Classical
+119,K8vZ917ooF0,Kaytranada,15,4,Dance/Electronic
+120,K8vZ9179pMf,Inhaler,59,44,Rock
+121,K8vZ917Cg7V,The Black Academy of Arts and Letters,56,56,Miscellaneous Theatre
+122,K8vZ917CBTV,Thundercat,5,4,Dance/Electronic
+123,K8vZ917bgU0,Tootsie (touring),39,39,Theatre
+124,K8vZ9174y6f,NAV,27,22,Hip-Hop/Rap
+125,K8vZ9171LWf,Ginuwine,13,12,R&B
+126,K8vZ917GCEV,Broadway Dallas,58,58,Theatre
+127,K8vZ9179uW0,King Princess,11,11,Pop
+128,K8vZ9172tvf,Death Grips,27,18,Hip-Hop/Rap
+129,K8vZ917CtA0,Adrián Uribe,2,2,Comedy
+130,K8vZ9171Q67,Built To Spill,19,11,Rock
+131,K8vZ917GenV,Stephen Marley,8,7,Reggae
+132,K8vZ9178m0f,Knuckle Puck,25,14,Rock
+133,K8vZ91745V0,Ashley McBryde,7,3,Country
+134,K8vZ917GDWV,The White Buffalo,7,6,Rock
+135,K8vZ9171WSV,Drive-By Truckers,19,15,Rock
+136,K8vZ9171sx7,Gary Owen,34,13,Comedy
+137,K8vZ9175_h0,Zucchero,6,4,Rock
+138,K8vZ9171zYf,Jeff Ross,19,10,Comedy
+139,K8vZ917Qea7,P1Harmony,12,11,Pop
+140,K8vZ91712df,Jefferson Starship,14,12,Rock
+141,K8vZ917p1C7,War On The Catwalk,2,2,Performance Art
+142,K8vZ917QS40,International Anime Music Festival,32,16,Undefined
+143,K8vZ917GCPf,Hollywood Undead,14,14,Rock
+144,K8vZ91782qf,Real Friends,26,15,Rock
+145,K8vZ917KzlV,Elderbrook,33,16,Dance/Electronic
+146,K8vZ917fYXf,Muscadine Bloodline,6,3,Country
+147,K8vZ917QKLf,Stephen Sanchez,19,8,Rock
+148,K8vZ917bK50,Chiiild,12,9,R&B
+149,K8vZ917o3HV,The Winery Dogs,17,9,Rock
+150,K8vZ9173Naf,Alvvays,27,20,Rock
+151,K8vZ9171lrV,Godspeed You! Black Emperor,4,2,Rock
+152,K8vZ91711If,Mindi Abair,13,7,Jazz
+153,K8vZ917bxnf,Eric D'Alessandro,5,4,Comedy
+154,K8vZ917pOjV,Mario Aguilar,1,1,Undefined
+155,K8vZ917bFUf,Peekaboo,9,6,Dance/Electronic
+156,K8vZ9171oN7,Sergio Mendes,3,2,World
+157,K8vZ917G-90,David Guetta,3,2,Dance/Electronic
+158,K8vZ917btLf,Our Planet Live In Concert,12,12,Classical
+159,K8vZ917uS9V,Bob Anderson,3,3,Undefined
+160,K8vZ917GcUV,Tooloji,1,1,Undefined
+161,K8vZ9171KHf,Rick Braun,6,2,Jazz
+162,K8vZ917Gylf,Jerrod Niemann,2,2,Country
+163,K8vZ917Q6h0,Celebrating Billy Joel,3,3,Undefined
+164,K8vZ91718A7,Chubby Checker,4,4,Rock
+165,K8vZ9175EoV,Madeleine Peyroux,18,12,Jazz
+166,K8vZ917u8xf,Pokey LaFarge,9,7,Rock
+167,K8vZ917QTp0,Sunset Rubdown,2,2,Rock
+168,K8vZ9178qO7,Parmalee,4,2,Country
+169,K8vZ91742sV,PRCA Championship Rodeo,14,5,Rodeo
+170,K8vZ9171VBf,Cold,25,12,Rock
+171,K8vZ917f8if,DJ TGIF,2,2,Hip-Hop/Rap
+172,K8vZ91712G0,KMFDM,5,4,Rock
+173,K8vZ917_QCV,KiNG MALA,2,2,Pop
+174,K8vZ9171_xf,Natalie MacMaster,5,5,Folk
+175,K8vZ917pem0,Meute,2,1,Dance/Electronic
+176,K8vZ917KAa7,Lost Kings,2,2,Dance/Electronic
+177,K8vZ917u7B7,Dopapod,2,NA,R&B
+178,K8vZ917KWgV,American Idiot,3,3,Theatre
+179,K8vZ917oaYf,Dabin,5,4,Dance/Electronic
+180,K8vZ9171f20,Gary Puckett,7,7,Rock
+181,K8vZ917QWBV,Club 90s Midnight Memories 1D Night,2,2,Pop
+182,K8vZ91713jf,Jesus Christ Superstar,96,NA,Theatre
+183,K8vZ91714Xf,Jo Dee Messina,5,5,Country
+184,K8vZ917Ggs7,Mike Zito,4,3,Blues
+185,K8vZ9175IKf,Kasabian,16,16,Rock
+186,K8vZ917GEoV,Jim Messina,5,3,Rock
+187,K8vZ9171EE0,North Mississippi Allstars,5,3,Blues
+188,K8vZ917QSff,Kizuna AI Original Singeroid #kzn,18,17,Pop
+189,K8vZ917Qna0,Andi,5,5,Pop
+190,K8vZ917b3jf,Boulet Brothers,2,2,Performance Art
+191,K8vZ91711k7,Arturo Sandoval,14,3,Jazz
+192,K8vZ9175ipV,KT Tunstall,17,16,Folk
+193,K8vZ9171QsV,The Residents,6,4,Rock
+194,K8vZ9179YTf,Neal Francis,15,6,Rock
+195,K8vZ917Kvqf,Dayseeker,24,12,Rock
+196,K8vZ9171oL7,Richard Elliot,3,3,Jazz
+197,K8vZ9175TaV,Escape the Fate,20,15,Metal
+198,K8vZ91731M7,Kelela,1,1,R&B
+199,K8vZfZ7EJtk,Mike Dean,8,NA,Dance/Electronic

@@ -25,6 +25,8 @@ class TicketmasterCursor:
                  fetchby_events=False,
                  fetchby_attractions=False):
         
+        self.fetchby_events = fetchby_events
+        self.fetchby_attractions = fetchby_attractions
         self.api_url = 'https://app.ticketmaster.com/'
         self.warehoused_data_dir = warehoused_data_dir
         assert batch_size <= 200 
@@ -76,6 +78,10 @@ class TicketmasterCursor:
         data_dict = raw_data.json()
         if not os.path.exists(data_dir):
             os.mkdir(data_dir)
+        if self.fetchby_attractions:
+            json_filename = "attraction_data_" + json_filename
+        elif self.fetchby_events:
+            json_filename = "event_data_" + json_filename
         with open(os.path.join(data_dir, json_filename), 'w') as f:
             json.dump(data_dict, f, indent=4)
         return data_dict
@@ -91,24 +97,117 @@ class TicketmasterCursor:
         return raw_data_dict 
 ##################END TICKETMASTERCURSOR CLASS@########################## 
 
+
+
+
 import pandas as pd 
 
-tm = TicketmasterCursor(config_filepath="login.json", batch_size=200, fetch_data=False, fetchby_attractions=True)
-with open("warehoused_data/warehoused_event_data.json", "r") as fp:
-    data_list = json.load(fp)["_embedded"]["attractions"]
-working_data_dict = {}
-for i, event in enumerate(data_list):
-    working_data_dict[i+1] = event
-extract = lambda f: [e[f] for e in working_data_dict.values()]
-dataseed = {"attraction_id":extract("id"), "attraction_name":extract("name"), 
-            "total_upcoming_attraction_events":[e["_total"] for e in extract("upcomingEvents")],
-            "upcoming_attraction_ticketmaster_events":[e["ticketmaster"] if "ticketmaster" in e.keys() \
-                                                                         else "NA" for e in extract("upcomingEvents")],
-            "attraction_genre":[t[0]["genre"]["name"] for t in extract("classifications")]}
-df = pd.DataFrame(dataseed)
-print(df.head())
+ 
 
+class DataParser:
+    def __init__(self, fetch_data:bool=True):
+        self.fetch_data = fetch_data
     
+    def parse_attraction_data(self, raw_data_filename, batch_size, config_filepath="login.json"):
+        tmAttractions = TicketmasterCursor(config_filepath=config_filepath, batch_size=batch_size, fetch_data=self.fetch_data, fetchby_attractions=True)
+        with open(os.path.join("warehoused_data", raw_data_filename), "r") as fp:
+            data_list = json.load(fp)["_embedded"]["attractions"]
+        working_data_dict = {}
+        for i, event in enumerate(data_list):
+            working_data_dict[i+1] = event
+        extract = lambda f: [e[f] for e in working_data_dict.values()]
+        dataseed = {"attraction_id":extract("id"), "attraction_name":extract("name"), 
+                    "total_upcoming_attraction_events":[e["_total"] for e in extract("upcomingEvents")],
+                    "upcoming_attraction_ticketmaster_events":[e["ticketmaster"] if "ticketmaster" in e.keys() \
+                                                                                else "NA" for e in extract("upcomingEvents")],
+                    "attraction_genre":[t[0]["genre"]["name"] for t in extract("classifications")]}
+        return pd.DataFrame(dataseed)
+ 
+ 
+    def parse_event_data(self, raw_data_filename, batch_size, config_filepath="login.json"):
+        tmEvents = TicketmasterCursor(config_filepath=config_filepath, batch_size=batch_size, fetch_data=self.fetch_data, fetchby_events=True)
+        with open(os.path.join("warehoused_data", raw_data_filename), "r") as fp:
+            event_data_list = json.load(fp)["_embedded"]["events"]
+        working_data_dict = {}
+        for i, event in enumerate(event_data_list):
+            working_data_dict[i+1] = event
+        extract_single_feature = lambda f: [e[f] for e in working_data_dict.values()] 
+        null = lambda: ["NA"]
+        extract_inner_list = lambda f1, f2, outer: [t[0][f1][f2] if type(t) == list else t[f1][f2] for t in extract_single_feature(outer)]
+        extract_dicts = lambda f, l: [e[f] if f in e.keys() else "NA" for e in l]
+        extract_dict_feature = lambda f, l: [t[0][f] if type(t)==list else t[f] for t in l]
+        priceranges = self._extract_outer_feature("priceRanges", event_data_list, priceranges=True)
+        sales_list = self._extract_outer_feature("sales", event_data_list, sales=True)
+        public = self._fill_empty_feature(extract_dicts("public", sales_list), "startDateTime", "endDateTime")
+        presales = self._transform_presales(sales_list)
+        extract_promoter = lambda f, l: [{'id':'NA', 'name':'NA', 'description':'NA'} if f not in e.keys() else e[f] for e in l]
+        event_promoters = [e["name"] for e in extract_promoter("promoter", event_data_list)]
+        dataseed = {"event_name":extract_single_feature("name"), 
+                    "event_id":extract_single_feature("id"),
+                    "event_type":extract_inner_list("genre", "name", "classifications"), 
+                    "trans_min":extract_dict_feature("min", priceranges), 
+                    "trans_max":extract_dict_feature("max", priceranges),
+                    "presale_start":extract_dict_feature("startDateTime", presales),
+                    "presale_end":extract_dict_feature("endDateTime", presales),
+                    "pub_sale_start":extract_dict_feature("startDateTime", public),
+                    "pub_sale_end":extract_dict_feature("endDateTime", public),
+                    "event_date":extract_inner_list("start", "localDate", "dates"),
+                    "event_promoter":event_promoters, 
+                    "event_attraction_ids":self._parse_attraction_ids(event_data_list)}
+        return pd.DataFrame(dataseed)
+    
+    
+    def _extract_outer_feature(self, feature_name:str, datalist, priceranges=False, sales=False):
+        feature_list = []
+        if priceranges:
+            null = {"type":"NA", "currency":"NA", "min":0, "max":0}
+        elif sales:
+            null = {"startDateTime":"NA", "startTBD":"NA", "startTBA":"NA", "endDateTime":"NA"}
+        for i, event in enumerate(datalist):
+            if type(event) == list:
+                for v in event:
+                    feature_list.append(v[feature_name])
+            elif feature_name in event.keys():    
+                feature_list.append(event[feature_name])
+            else:
+                feature_list.append(null)
+        return feature_list
+    
+    
+    def _fill_empty_feature(self, datalist, feature_name1:str, feature_name2:str=None, feature_name3:str=None):
+        for e in datalist:
+            if feature_name1 not in e.keys():
+                e[feature_name1] = "NA"
+            if feature_name2 is not None and feature_name2 not in e.keys():
+                e[feature_name2] = "NA"
+            if feature_name3 is not None and feature_name3 not in e.keys():
+                e[feature_name3] = "NA"
+        return datalist
+    
+    
+    def _transform_presales(self, sales_list):
+        presales = []
+        for event in sales_list:
+            if "presales" in event.keys():
+                presales.append(event["presales"])
+            else:
+                presales.append({"description":"NA", "url":"NA", "startDateTime":"NA", "startTBD":"NA", "startTBA":"NA", "endDateTime":"NA", "name":"NA"})
+        return presales
+    
+    
+    def _parse_attraction_ids(self, datalist):
+        _attractions = [e["_embedded"]["attractions"] for e in datalist]
+        attractions = {}
+        attractions__ = []
+        for i, e in enumerate(_attractions):
+            attractions[i] = [x["id"] for x in e]
+        for a in attractions:
+            attractions__.append(attractions[a])
+        return attractions__
+##########################################END DATA PARSER CLASS#################################
+
+
+
 
 
 
